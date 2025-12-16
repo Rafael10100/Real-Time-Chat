@@ -1,11 +1,13 @@
-const express = require("express");
-const http = require("http");
-const { Server } = require("socket.io");
-const cors = require("cors");
+import express from "express";
+import http from "http";
+import io from "socket.io";
+import cors from "cors"
+
+const { Server } = io
 
 const app = express();
 app.use(cors());
-
+{
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -64,4 +66,4 @@ io.on("connection", (socket) => {
 
 server.listen(3001, () => {
   console.log("Backend rodando na porta 3001");
-});
+});}
