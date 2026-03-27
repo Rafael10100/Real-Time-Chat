@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:3001');
+const socket = io(window.location.origin);
 
 function App() {
   const [username, setUsername] = useState('');
